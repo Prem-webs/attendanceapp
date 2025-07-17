@@ -11,17 +11,14 @@ body {
 .card {
   width: 400px;
   background: rgb(205, 243, 254);
-  border-radius: 30px;
+  border-radius: 80px;
   padding: 2rem 2rem 2.5rem;
   margin: 2rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   animation: slideIn 0.8s ease-out;
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(80px); }
-  to { opacity: 1; transform: translateX(0); }
-}
+
 
 h1 {
   text-align: center;
@@ -61,6 +58,7 @@ form {
 
 form.active {
   display: block;
+  width: 380px;
   animation: fade 0.4s ease forwards;
 }
 
@@ -106,7 +104,7 @@ form.active {
 }
 
 .submit-btn {
-  width: 100%;
+  width: 400px;
   padding: 0.75rem;
   background: #2980b9;
   color: #fff;
@@ -122,7 +120,7 @@ form.active {
   background: #1c5980;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   body {
     justify-content: center;
     padding: 1rem;
