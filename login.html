@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Shreeyash Polytechnic</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-card">
+    <h2>Login</h2>
+    
+    <form onsubmit="return handleLogin(event)">
+      <div class="field">
+        <label>Username</label>
+        <input required type="text" name="username" />
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <input required type="password" name="password" />
+      </div>
+
+      <button class="login-btn" type="submit">Login</button>
+    </form>
+
+    <p class="back-link">
+      Not registered? <a href="index.html">Register here</a>
+    </p>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = event.target.username.value;
+      const password = event.target.password.value;
+      alert(`Login submitted!\nUsername: ${username}\nPassword: ${password}`);
+      // Replace this with your backend login logic
+      return false;
+    }
+  </script>
+</body>
+</html>

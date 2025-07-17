@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shreeyash Polytechnic | Attendance Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="card" id="loginCard">
+    <h1>Shreeyash Polytechnic<br />Attendance Registration</h1>
+
+    <!-- Role toggle -->
+    <div class="toggle">
+      <button id="studentBtn" class="active" onclick="showForm('student')">Student</button>
+      <button id="teacherBtn" onclick="showForm('teacher')">Teacher</button>
+    </div>
+
+    <!-- Student Form -->
+    <form id="studentForm" class="active" onsubmit="return handleSubmit(event, 'Student')">
+      <div class="field"><label>Full Name</label><input required type="text" name="name" /></div>
+      <div class="field"><label>Enrollment ID</label><input required type="text" name="enrollment" /></div>
+      <div class="field"><label>Branch</label><input required type="text" name="branch" /></div>
+      <div class="field"><label>Semester</label><input required type="text" name="semester" /></div>
+      <div class="field"><label>Academic Year</label><input required type="text" name="year" /></div>
+      <div class="field"><label>Email</label><input required type="email" name="email" /></div>
+      <div class="field"><label>Phone</label><input required type="tel" name="phone" /></div>
+      <div class="field"><label>Username</label><input required type="text" name="username" /></div>
+      <div class="field"><label>Password</label><input required type="password" name="password" /></div>
+
+      <div class="login-note">
+        Already registered? <a href="login.html">Login here</a>
+      </div>
+
+      <button class="submit-btn" type="submit">Register as Student</button>
+    </form>
+
+    <!-- Teacher Form -->
+    <form id="teacherForm" onsubmit="return handleSubmit(event, 'Teacher')">
+      <div class="field"><label>Full Name</label><input required type="text" name="name" /></div>
+      <div class="field"><label>Email</label><input required type="email" name="email" /></div>
+      <div class="field"><label>Department</label><input required type="text" name="dept" /></div>
+      <div class="field"><label>Password</label><input required type="password" name="password" /></div>
+
+      <div class="login-note">
+        Already registered? <a href="login.html">Login here</a>
+      </div>
+
+      <button class="submit-btn" type="submit">Register as Teacher</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm(type) {
+      const buttons = {
+        student: document.getElementById('studentBtn'),
+        teacher: document.getElementById('teacherBtn')
+      };
+
+      const forms = {
+        student: document.getElementById('studentForm'),
+        teacher: document.getElementById('teacherForm')
+      };
+
+      for (let role in buttons) {
+        buttons[role].classList.remove('active');
+        forms[role].classList.remove('active');
+      }
+
+      buttons[type].classList.add('active');
+      forms[type].classList.add('active');
+    }
+
+    function handleSubmit(event, role) {
+      event.preventDefault();
+      alert(`${role} registration submitted!`);
+      event.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
