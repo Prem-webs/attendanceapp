@@ -12,16 +12,14 @@ body {
   width: 350px;
   background: rgba(255, 255, 255, 0.95);
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: 60px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.5s ease-out;
   text-align: center;
+  justify-content: center;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+
 
 h2 {
   margin-bottom: 1.5rem;
@@ -30,6 +28,7 @@ h2 {
 
 .field {
   margin-bottom: 1rem;
+  width: 335px;
   text-align: left;
 }
 
@@ -82,9 +81,9 @@ h2 {
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .login-card {
-    width: 90%;
+    width: 100%;
     padding: 1.5rem;
   }
 }
